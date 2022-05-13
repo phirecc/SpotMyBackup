@@ -488,7 +488,7 @@ function loadTrackChunks(url, arr, callback) {
             if ('items' in data) {
                 $.each(data.items, function (index, value) {
                     if(value.track !== null){
-                        arr.push({ id: value.track.id, uri: value.track.uri });    
+                        arr.push({ id: value.track.id, uri: value.track.uri, title: value.track.name, artists: value.track.artists.map(x => x.name).join(", ")});    
                     }else{
                         console.log("track is null", value);
                     }                    
